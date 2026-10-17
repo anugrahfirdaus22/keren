@@ -34,5 +34,33 @@
                             </div>
             </div>
         </section>
+        <!-- Tag Audio untuk Backsound -->
+
+<!-- Tag Audio untuk Backsound -->
+<audio id="myAudio" loop>
+  <source src="backsound/lagu.mp3" type="audio/mpeg">
+  </audio>
+  
+
+
+<!-- Tombol Musik (Kategori Penting Karena Kebijakan Browser) -->
+<button onclick="playAudio()" id="musicBtn" style="position: fixed; bottom: 20px; right: 20px; z-index: 100; padding: 10px 15px; cursor: pointer; border-radius: 20px; border: none; background-color: #007bff; color: white;">
+  🎵 Play Music
+</button>
+
+<script>
+  function playAudio() {
+    var audio = document.getElementById("myAudio");
+    var btn = document.getElementById("musicBtn");
+    
+    if (audio.paused) {
+      audio.play();
+      btn.innerHTML = "⏸️ Pause Music";
+    } else {
+      audio.pause();
+      btn.innerHTML = "🎵 Play Music";
+    }
+  }
+</script>
     </body>
 </html>
